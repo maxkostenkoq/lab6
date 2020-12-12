@@ -1,0 +1,38 @@
+#include <iostream>
+#define _USE_MATH_DEFINES
+#include "math.h"
+#include "stdio.h"
+#include "windows.h"
+
+using namespace std;
+
+double form1(double b, double x, double y, double z) {
+    int ODZ = pow(x, 4) / 4;
+    if (ODZ == -z){
+        return NULL;
+    }
+    return  log(abs(y - sqrt(abs(x)) * (x - y / z + pow(x, 4) / 4)));
+}
+
+int main()
+{
+    double A, b, x, y, z;
+    printf("input x\nx=");
+    scanf_s("%lf", &x);
+
+    printf("input y\ny=");
+    scanf_s("%lf", &y);
+
+    printf("input z z\nz =");
+    scanf_s("%lf", &z);
+
+    printf("input b b\nb =");
+    scanf_s("%lf", &b);
+
+    A = form1(b, x, y, z);
+    
+    printf("A=%lf", A);
+
+    system("pause");
+    return 0;
+}
